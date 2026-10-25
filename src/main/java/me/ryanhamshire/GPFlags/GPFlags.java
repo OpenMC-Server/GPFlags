@@ -10,7 +10,6 @@ import me.ryanhamshire.GPFlags.hooks.PlaceholderApiHook;
 import me.ryanhamshire.GPFlags.listener.*;
 import me.ryanhamshire.GPFlags.util.MessagingUtil;
 import me.ryanhamshire.GriefPrevention.GriefPrevention;
-import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 import org.bstats.charts.DrilldownPie;
 import org.bstats.charts.SimplePie;
 import org.bukkit.Bukkit;
@@ -32,12 +31,10 @@ public class GPFlags extends JavaPlugin {
     private WorldSettingsManager worldSettingsManager;
     boolean registeredFlagDefinitions = false;
     private PlayerListener playerListener;
-    public BukkitAudiences adventure;
 
     public void onEnable() {
         long start = System.currentTimeMillis();
         instance = this;
-        this.adventure = BukkitAudiences.create(this);
         this.playerListener = new PlayerListener();
         Bukkit.getPluginManager().registerEvents(playerListener, this);
         try {
@@ -177,10 +174,4 @@ public class GPFlags extends JavaPlugin {
         return new DrilldownPie(statId, () -> map);
     }
 
-    public BukkitAudiences getAdventure() {
-        if (this.adventure == null) {
-            throw new IllegalStateException("Tried to access Adventure when the plugin was disabled!");
-        }
-        return this.adventure;
-    }
 }

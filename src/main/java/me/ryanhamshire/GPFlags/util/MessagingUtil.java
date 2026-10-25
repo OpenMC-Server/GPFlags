@@ -44,7 +44,7 @@ public class MessagingUtil {
         } catch (Throwable ignored) {}
         message = message.replace(COLOR_CHAR, '&');
         Component component = ChatUtil.hexComp(message);
-        GPFlags.getInstance().getAdventure().player(player).sendMessage(component);
+        player.sendMessage(component);
     }
 
     private static void logToConsole(String message) {
@@ -58,7 +58,7 @@ public class MessagingUtil {
         } catch (Throwable ignored) {}
         message = message.replace(COLOR_CHAR, '&');
         Component component = ChatUtil.hexComp(message);
-        GPFlags.getInstance().getAdventure().player(player).sendActionBar(component);
+        player.sendActionBar(component);
     }
 
     public static void logFlagCommands(String log) {

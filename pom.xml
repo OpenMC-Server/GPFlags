@@ -6,7 +6,7 @@
 
     <groupId>me.ryanhamshire</groupId>
     <artifactId>GPFlags</artifactId>
-    <version>5.14.2-OpenMC</version>
+    <version>5.14.3-OpenMC</version>
 
     <properties>
 <!--        this is the real java version used for compilation-->
